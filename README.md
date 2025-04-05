@@ -14,7 +14,6 @@ This project is designed to demonstrate SQL skills and techniques typically used
 #### Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
 create database retail_sales;
-![Cognizent2](https://github.com/user-attachments/assets/ab986cfe-7524-49b8-bd66-2420bfac67f5)
 use retail_sales;
 
 CREATE TABLE retail (
@@ -84,10 +83,10 @@ SELECT * FROM retail;
 
 desc retail;
 
-## 1. Write a SQL query to retrieve all columns for sales made on '2022-11-05:
+### 1. Write a SQL query to retrieve all columns for sales made on '2022-11-05:
 select * from retail where sale_date = '2022-11-05';
 
-## 2. Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
+### 2. Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
 SELECT * FROM retail
 WHERE
     category = 'Clothing' AND quantity >= 4
@@ -101,7 +100,7 @@ FROM
 GROUP BY category
 ORDER BY total_sale_category DESC;
 
-# 4.Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.:
+### 4.Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.:
 SELECT 
     category, round(AVG(age)) AS average_age
 FROM
@@ -109,7 +108,7 @@ FROM
 WHERE
     category = 'Beauty';
     
-# 5. Write a SQL query to find all transactions where the total_sale is greater than 1000.:
+### 5. Write a SQL query to find all transactions where the total_sale is greater than 1000.:
 SELECT 
     *
 FROM
@@ -117,7 +116,7 @@ FROM
 WHERE
     total_sale >= 1000;
 
-# 6. Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
+### 6. Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.:
 
 SELECT 
     category,
@@ -127,7 +126,7 @@ FROM
     retail
 GROUP BY gender , category;
 
-# 7. Write a SQL query to calculate the average sale for each month. Find out best selling month in each year:
+### 7. Write a SQL query to calculate the average sale for each month. Find out best selling month in each year:
 select
 	date_format(sale_date, '%Y') as year_name,
     date_format(sale_date, '%M') as month_name,
@@ -136,7 +135,7 @@ select
     from retail 
     group by year_name, month_name;
     
-# 8. Write a SQL query to find the top 5 customers based on the highest total sales:
+### 8. Write a SQL query to find the top 5 customers based on the highest total sales:
 SELECT 
     customer_id, SUM(total_sale) AS total_Sales
 FROM
@@ -144,14 +143,14 @@ FROM
 GROUP BY customer_id
 ORDER BY total_sales DESC limit 5;
 
-# 9. Write a SQL query to find the number of unique customers who purchased items from each category.:
+### 9. Write a SQL query to find the number of unique customers who purchased items from each category.:
 SELECT 
     category, COUNT(DISTINCT (customer_id)) AS unique_customers
 FROM
     retail
 GROUP BY category;
 
-# 10. Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17):
+### 10. Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17):
 select
 	case
 		when hour(sale_time) <12 then 'Morning'
@@ -164,8 +163,8 @@ select
 			group by shifts;
 
 #Findings
-###Customer Demographics: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
-###High-Value Transactions: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
-###Sales Trends: Monthly analysis shows variations in sales, helping identify peak seasons.
-###Customer Insights: The analysis identifies the top-spending customers and the most popular product categories.
+#### Customer Demographics: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
+#### High-Value Transactions: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
+#### Sales Trends: Monthly analysis shows variations in sales, helping identify peak seasons.
+#### Customer Insights: The analysis identifies the top-spending customers and the most popular product categories.
    
