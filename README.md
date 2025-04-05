@@ -13,8 +13,9 @@ This project is designed to demonstrate SQL skills and techniques typically used
 #### Database Creation: The project starts by creating a database named p1_retail_db.
 #### Table Creation: A table named retail_sales is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
-**create database retail_sales;
-use retail_sales;**
+create database retail_sales;
+![Cognizent2](https://github.com/user-attachments/assets/ab986cfe-7524-49b8-bd66-2420bfac67f5)
+use retail_sales;
 
 CREATE TABLE retail (
     transactions_id INT PRIMARY KEY,
