@@ -140,19 +140,3 @@ select
 	from
 		retail
 			group by shifts;
-
-
-;
-select * from retail;
-
-    
-
-
-
-
-
-
-
-
-
-
